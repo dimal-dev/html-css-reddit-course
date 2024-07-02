@@ -131,7 +131,7 @@
     background-color: rgba(0, 0, 0, 0.16);
 }
 
-#more-menu-toggle-checkbox:checked~.more-menu {
+#more-menu-toggle-checkbox:checked ~ .more-menu {
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -184,6 +184,14 @@
     border-radius: 8px;
     padding: 0;
     max-height: calc(100vh - 56px - 1px);
+
+    overflow-y: auto;
+    scrollbar-color: transparent transparent;
+    scrollbar-width: thin;
+}
+
+.right-sidebar:hover {
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
 }
 
 .sidebar-community-info {
@@ -238,7 +246,8 @@
     border-radius: 50%;
 }
 
-.sidebar-image {
+.sidebar-image,
+.filter-by-flair {
     margin-top: 8px;
     padding: 25px 14px 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -248,11 +257,71 @@
     gap: 12px;
 }
 
-.sidebar-image-header {
+.sidebar-image-header,
+.filter-by-flair-header {
     font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
     color: rgb(87, 111, 118);
+}
+
+.flair-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0;
+    list-style: none;
+}
+
+.flair-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 8px 12px;
+    border-radius: 20px;
+    background-color: transparent;
+    border: none;
+
+    text-transform: uppercase;
+    font-size: 12px;
+    color: white;
+}
+
+.flair-button:hover {
+    opacity: .9;
+    cursor: pointer;
+}
+
+.flair-button:active {
+    opacity: .8;
+    cursor: pointer;
+}
+
+.flair-button--fan-made {
+    background-color: rgb(255, 69, 0);
+}
+
+.flair-button--funny {
+    background-color: rgb(255, 176, 0);
+}
+
+.flair-button--discussion {
+    background-color: rgb(52, 158, 72);
+}
+
+.flair-button--spoiler {
+    background-color: rgb(234, 0, 39);
+}
+
+.flair-button--news {
+    background-color: rgb(0, 121, 211);
+}
+
+.flair-button i {
+    width: 1em;
+    height: 1em;
+    font-size: 16px;
 }
 
 /** CONTENT MAIN **/
@@ -262,7 +331,7 @@
 
 .post {
     border-radius: 15px;
-    padding:  4px 16px;
+    padding: 4px 16px;
 }
 
 .post-container:not(:last-child) {
@@ -356,9 +425,11 @@
 .post-activity-button:active {
     background-color: rgba(0, 0, 0, 0.16);
 }
+
 .post-vote {
     padding: 0;
 }
+
 .post-vote .post-activity-button {
     align-items: center;
     justify-content: center;
