@@ -6,8 +6,10 @@
     height: calc(100vh - 72px);
     padding: 16px 24px 0 16px;
     border-right: 1px solid rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
 
+    background-color: white;
+
+    overflow-y: auto;
     scrollbar-color: transparent transparent;
     scrollbar-width: thin;
 }
